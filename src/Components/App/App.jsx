@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import ItemList from '../ItemList/ItemList';
+import SearchBar from '../SearchBar/SearchBar';
 
 const App = () => {
   const [err, setErr] = useState(null);
@@ -10,6 +11,7 @@ const App = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchItem, setSearchItem] = useState('pants');
   const [pageNumber, setPageNumber] = useState(1);
+  const [searchField, setSearchField] = useState('');
 
   useEffect(() => {
     axios
@@ -32,8 +34,11 @@ const App = () => {
       );
   }, [searchItem, pageNumber]);
 
+  const handleSearchChange = (e) => setSearchField(e.target.value);
+
   return (
     <div>
+      <SearchBar placeholder="Search for Brand, Color, Size..." handleSearchChange={handleSearchChange} />
       <ItemList searchResults={searchResults} />
     </div>
   );
