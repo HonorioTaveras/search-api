@@ -5,8 +5,10 @@ import ItemList from '../ItemList/ItemList';
 
 const App = () => {
   const [err, setErr] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [data, setData] = useState({});
   const [searchResults, setSearchResults] = useState([]);
-  const [searchItem, setSearchItem] = useState('shirts');
+  const [searchItem, setSearchItem] = useState('pants');
   const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
@@ -16,11 +18,16 @@ const App = () => {
       )
       .then(
         (res) => {
+          console.log('data from app component: ', res.data);
           console.log('results from app component: ', res.data.results);
+          setIsLoaded(true);
+          setData(res.data);
           setSearchResults(res.data.results);
         },
         (err) => {
           console.log('search error: ', JSON.parse(err));
+          setIsLoaded(true);
+          setErr(err);
         }
       );
   }, [searchItem, pageNumber]);
