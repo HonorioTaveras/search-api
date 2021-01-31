@@ -9,7 +9,7 @@ const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [data, setData] = useState({});
   const [searchResults, setSearchResults] = useState([]);
-  const [searchItem, setSearchItem] = useState('pants');
+  const [searchItem, setSearchItem] = useState('');
   const [pageNumber, setPageNumber] = useState(1);
   const [searchField, setSearchField] = useState('');
 
@@ -36,9 +36,19 @@ const App = () => {
 
   const handleSearchChange = (e) => setSearchField(e.target.value);
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+
+    setSearchItem(searchField);
+  }
+
   return (
     <div>
-      <SearchBar placeholder="Search for Brand, Color, Size..." handleSearchChange={handleSearchChange} />
+      <SearchBar
+        placeholder='Search for Brand, Color, Size...'
+        handleSearchChange={handleSearchChange}
+        handleSearchSubmit={handleSearchSubmit}
+      />
       <ItemList searchResults={searchResults} />
     </div>
   );

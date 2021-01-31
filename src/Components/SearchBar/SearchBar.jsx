@@ -1,16 +1,16 @@
 import React from 'react';
 
-const SearchBar = ({ handleSubmit, placeholder, handleSearchChange }) => (
+const SearchBar = ({ handleSearchSubmit, placeholder, handleSearchChange }) => (
   <div>
   <div className="input-wrapper">
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSearchSubmit}>
       <input
         className="search"
         type="search"
         placeholder={placeholder}
         onChange={handleSearchChange}
       />
-      {/* <CustomButton type="submit">Search</CustomButton> */}
+      <input type="submit" />
     </form>
   </div>
 </div>
