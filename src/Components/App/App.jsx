@@ -43,9 +43,11 @@ const App = () => {
     setSearchItem(searchField);
   };
 
+  const paginate = (page) => setPageNumber(page);
+
   return (
     <div>
-      <PaginateResults />
+      <PaginateResults pagination={pagination} paginate={paginate} />
       <SearchBar
         placeholder='Search for Brand, Color, Size...'
         handleSearchChange={handleSearchChange}
@@ -56,7 +58,7 @@ const App = () => {
       ) : (
         <p>There are no results for your search.</p>
       )}
-      <PaginateResults />
+      <PaginateResults pagination={pagination} paginate={paginate} />
     </div>
   );
 };
