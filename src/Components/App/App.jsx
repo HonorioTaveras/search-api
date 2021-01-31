@@ -40,7 +40,7 @@ const App = () => {
     e.preventDefault();
 
     setSearchItem(searchField);
-  }
+  };
 
   return (
     <div>
@@ -49,7 +49,11 @@ const App = () => {
         handleSearchChange={handleSearchChange}
         handleSearchSubmit={handleSearchSubmit}
       />
-      <ItemList searchResults={searchResults} />
+      {searchResults.length ? (
+        <ItemList searchResults={searchResults} />
+      ) : (
+        <p>There are no results for your search.</p>
+      )}
     </div>
   );
 };
