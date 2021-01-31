@@ -31,14 +31,14 @@ const PaginateResults = ({
   return (
     <>
       <Pagination>
-        {currentPage > 1 && nextPage > 0 ? (
+        {currentPage > 1 ? (
           <>
             <Pagination.First onClick={() => paginate(1)} />
             <Pagination.Prev onClick={() => paginate(previousPage)} />
           </>
         ) : null}
-        {nextPage > 0 ? showPages().map((page) => page) : null}
-        {currentPage < totalPages && nextPage > 0 ? (
+        {showPages().map((page) => page)}
+        {currentPage < totalPages ? (
           <>
             <Pagination.Next onClick={() => paginate(nextPage)} />
             <Pagination.Last onClick={() => paginate(totalPages)} />
