@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import ItemList from '../ItemList/ItemList';
 import SearchBar from '../SearchBar/SearchBar';
+import PaginateResults from '../PaginateResults/PaginateResults';
 
 const App = () => {
   const [err, setErr] = useState(null);
@@ -34,7 +35,6 @@ const App = () => {
       );
   }, [searchItem, pageNumber]);
 
-
   const handleSearchChange = (e) => setSearchField(e.target.value);
 
   const handleSearchSubmit = (e) => {
@@ -45,6 +45,7 @@ const App = () => {
 
   return (
     <div>
+      <PaginateResults />
       <SearchBar
         placeholder='Search for Brand, Color, Size...'
         handleSearchChange={handleSearchChange}
@@ -55,6 +56,7 @@ const App = () => {
       ) : (
         <p>There are no results for your search.</p>
       )}
+      <PaginateResults />
     </div>
   );
 };
