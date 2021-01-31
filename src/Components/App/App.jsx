@@ -7,8 +7,8 @@ import SearchBar from '../SearchBar/SearchBar';
 const App = () => {
   const [err, setErr] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [data, setData] = useState({});
   const [searchResults, setSearchResults] = useState([]);
+  const [pagination, setPagination] = useState({});
   const [searchItem, setSearchItem] = useState('');
   const [pageNumber, setPageNumber] = useState(1);
   const [searchField, setSearchField] = useState('');
@@ -20,11 +20,11 @@ const App = () => {
       )
       .then(
         (res) => {
-          console.log('data from app component: ', res.data);
           console.log('results from app component: ', res.data.results);
+          console.log('pagination from app component: ', res.data.pagination);
           setIsLoaded(true);
-          setData(res.data);
           setSearchResults(res.data.results);
+          setPagination(res.data.pagination);
         },
         (err) => {
           console.log('search error: ', JSON.parse(err));
@@ -33,6 +33,7 @@ const App = () => {
         }
       );
   }, [searchItem, pageNumber]);
+
 
   const handleSearchChange = (e) => setSearchField(e.target.value);
 
