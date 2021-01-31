@@ -52,7 +52,7 @@ const App = () => {
         handleSearchChange={handleSearchChange}
         handleSearchSubmit={handleSearchSubmit}
       />
-      {searchResults.length ? (
+      {searchResults.length && pagination.totalPages > 1 ? (
         <PaginateResults pagination={pagination} paginate={paginate} />
       ) : null}
       {searchResults.length ? (
@@ -60,7 +60,7 @@ const App = () => {
       ) : (
         <p>There are no results for your search.</p>
       )}
-      {searchResults.length ? (
+      {searchResults.length && pagination.totalPages > 1 ? (
         <PaginateResults pagination={pagination} paginate={paginate} />
       ) : null}
     </div>
