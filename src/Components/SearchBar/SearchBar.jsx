@@ -1,19 +1,19 @@
 import React from 'react';
 
+import './SearchBar.scss';
+
 const SearchBar = ({ handleSearchSubmit, placeholder, handleSearchChange }) => (
-  <div>
-  <div className="input-wrapper">
+  <div className='search-container'>
     <form onSubmit={handleSearchSubmit}>
       <input
-        className="search"
-        type="search"
+        className='search'
+        type='search'
         placeholder={placeholder}
         onChange={handleSearchChange}
       />
-      <input type="submit" />
+      <input className='magnifying-glass' type='submit' />
     </form>
   </div>
-</div>
 );
 
 export default SearchBar;

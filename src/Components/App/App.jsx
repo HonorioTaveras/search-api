@@ -67,7 +67,7 @@ const App = () => {
     );
   }
   return (
-    <div>
+    <div className="app-container">
       <SearchBar
         placeholder='Search for Brand, Color, Size...'
         handleSearchChange={handleSearchChange}

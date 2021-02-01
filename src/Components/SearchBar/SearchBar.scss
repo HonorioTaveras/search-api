@@ -1,0 +1,22 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+  @media (max-width: 480px) {
+    width: 90%;
+  }
+  .search {
+    margin: 2rem 0;
+    width: 20.125rem;
+    @media (max-width: 768px) {
+      width: 20.125rem;
+    }
+    @media (max-width: 480px) {
+      width: 20.125rem;
+    }
+  }
+  .magnifying-glass {
+  }
+}
