@@ -44,6 +44,7 @@ const App = () => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
 
+    setPageNumber(1);
     setSearchItem(searchField);
   };
 
