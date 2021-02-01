@@ -5,7 +5,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import Placeholder from '../../assets/photo.png';
 
 const Item = ({ image, name, msrp, price }) => (
-  <div>
+  <div className="item-container">
     <LazyLoadImage
       alt=''
       src={image}

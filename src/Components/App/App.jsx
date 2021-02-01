@@ -67,14 +67,16 @@ const App = () => {
     );
   }
   return (
-    <div className="app-container">
+    <div className='app-container'>
       <SearchBar
         placeholder='Search for Brand, Color, Size...'
         handleSearchChange={handleSearchChange}
         handleSearchSubmit={handleSearchSubmit}
       />
       {searchResults.length && pagination.totalPages > 1 ? (
-        <PaginateResults pagination={pagination} paginate={paginate} />
+        <div className="pagination">
+          <PaginateResults pagination={pagination} paginate={paginate} />
+        </div>
       ) : null}
       {searchResults.length ? (
         <ItemList searchResults={searchResults} />
@@ -82,7 +84,9 @@ const App = () => {
         <p>There are no results for your search.</p>
       )}
       {searchResults.length && pagination.totalPages > 1 ? (
-        <PaginateResults pagination={pagination} paginate={paginate} />
+        <div className="pagination">
+          <PaginateResults pagination={pagination} paginate={paginate} />
+        </div>
       ) : null}
     </div>
   );
