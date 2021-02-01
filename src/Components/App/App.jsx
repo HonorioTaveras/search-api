@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import Spinner from 'react-bootstrap/Spinner';
+
 import ItemList from '../ItemList/ItemList';
 import SearchBar from '../SearchBar/SearchBar';
 import PaginateResults from '../PaginateResults/PaginateResults';
+
+import './App.scss';
 
 const App = () => {
   const [err, setErr] = useState(null);
@@ -45,6 +49,22 @@ const App = () => {
 
   const paginate = (page) => setPageNumber(page);
 
+  if (err) {
+    return (
+      <div>
+        Error:
+        {err.message}
+      </div>
+    );
+  }
+  if (!isLoaded) {
+    return (
+      <div className='spinner'>
+        <Spinner animation='border' role='status' />
+        <div>Loading...</div>
+      </div>
+    );
+  }
   return (
     <div>
       <SearchBar
