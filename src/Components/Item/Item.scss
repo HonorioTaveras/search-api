@@ -1,11 +1,12 @@
 .item-container {
   padding-top: 30px;
+  text-align: center;
   img {
     width: 100%;
     height: auto;
   }
   .item-name {
-    text-align: center;
+    word-wrap: break-word;
     padding-top: 30px;
     font-size: 14px;
   }

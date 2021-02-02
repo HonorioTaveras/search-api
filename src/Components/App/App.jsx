@@ -83,7 +83,7 @@ const App = () => {
         <p>There are no results for your search.</p>
       )}
       {searchResults.length && pagination.totalPages > 1 ? (
-        <div className="pagination">
+        <div className="pagination pagination-bottom">
           <PaginateResults pagination={pagination} paginate={paginate} />
         </div>
       ) : null}

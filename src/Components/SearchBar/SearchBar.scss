@@ -12,6 +12,8 @@
     flex-direction: row;
     .search {
       cursor: text;
+      outline: none;
+      font-size: 14px;
       border: 1px solid ghostwhite;
       border-radius: 25px;
       margin: 2rem 0;
