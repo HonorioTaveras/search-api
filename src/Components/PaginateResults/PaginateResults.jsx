@@ -13,7 +13,6 @@ const PaginateResults = ({
       pages = [];
       if (totalPages > 5) {
         for (let i = currentPage - 2; i <= currentPage + 2; i += 1) {
-          console.log(pages);
           pages.push(
             <Pagination.Item key={i} onClick={() => paginate(i)}>
               {i}
@@ -23,7 +22,6 @@ const PaginateResults = ({
       }
       if (totalPages <= 5) {
         for (let i = currentPage - 2; i <= totalPages; i += 1) {
-          console.log(pages);
           pages.push(
             <Pagination.Item key={i} onClick={() => paginate(i)}>
               {i}
@@ -35,7 +33,6 @@ const PaginateResults = ({
     if (currentPage < 3 && totalPages > 5) {
       pages = [];
       for (let i = 1; i <= 5; i += 1) {
-        console.log(pages);
         pages.push(
           <Pagination.Item key={i} onClick={() => paginate(i)}>
             {i}
@@ -46,7 +43,6 @@ const PaginateResults = ({
     if (currentPage >= 5 && currentPage >= totalPages - 5) {
       pages = [];
       for (let i = totalPages - 4; i <= totalPages; i += 1) {
-        console.log(pages);
         pages.push(
           <Pagination.Item key={i} onClick={() => paginate(i)}>
             {i}
@@ -57,7 +53,6 @@ const PaginateResults = ({
     if (currentPage < 3 && totalPages < 5) {
       pages = [];
       for (let i = 1; i <= totalPages; i += 1) {
-        console.log(pages);
         pages.push(
           <Pagination.Item key={i} onClick={() => paginate(i)}>
             {i}

@@ -25,14 +25,11 @@ const App = () => {
       )
       .then(
         (res) => {
-          console.log('results from app component: ', res.data.results);
-          console.log('pagination from app component: ', res.data.pagination);
           setIsLoaded(true);
           setSearchResults(res.data.results);
           setPagination(res.data.pagination);
         },
         (err) => {
-          console.log('search error: ', JSON.parse(err));
           setIsLoaded(true);
           setErr(err);
         }
