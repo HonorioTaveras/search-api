@@ -5,12 +5,14 @@
     height: auto;
   }
   .item-name {
-    margin-top: 10px;
+    text-align: center;
+    padding-top: 30px;
     font-size: 14px;
   }
   .crossed {
     display: flex;
     justify-content: center;
+    align-items: baseline;
     font-size: 14px;
     .msrp-crossed {
       text-decoration: line-through;
@@ -18,10 +20,13 @@
     }
     .price {
       color: #007bff;
-      font-weight: 700;
+      font-weight: 800;
       padding-left: 5px;
     }
   }
   .msrp {
+    color: #007bff;
+    font-weight: 800;
+    padding-left: 5px;
   }
 }

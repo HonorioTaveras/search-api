@@ -7,19 +7,27 @@
   @media (max-width: 480px) {
     width: 90%;
   }
-  .search {
-    border: none;
-    margin: 2rem 0;
-    width: 20.125rem;
-    @media (max-width: 768px) {
+  .search-bar {
+    display: flex;
+    flex-direction: row;
+    .search {
+      cursor: text;
+      border: 1px solid ghostwhite;
+      border-radius: 25px;
+      margin: 2rem 0;
       width: 20.125rem;
+      height: 50px;
+      padding: 20px;
+      @media (max-width: 768px) {
+        width: 20.125rem;
+      }
+      @media (max-width: 480px) {
+        width: 14rem;
+      }
     }
-    @media (max-width: 480px) {
-      width: 14rem;
+    .magnifying-glass {
+      border: none;
+      background-color: transparent;
     }
-  }
-  .magnifying-glass {
-    border: none;
-    background-color: transparent;
   }
 }

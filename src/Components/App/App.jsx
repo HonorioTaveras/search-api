@@ -62,7 +62,6 @@ const App = () => {
     return (
       <div className='spinner'>
         <Spinner animation='border' role='status' />
-        <div>Loading...</div>
       </div>
     );
   }
