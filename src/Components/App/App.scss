@@ -1,18 +1,48 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f4faf9;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 14.5%;
-  .spinner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+
+  @media (max-width: 1200px) {
+    margin: 0 9%;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    align-self: center;
+    margin: 0 15%;
   }
 
   .pagination {
-    display: flex;
     justify-content: flex-end;
+
+    @media (min-width: 1200px) {
+    }
+
+    @media (max-width: 992px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
   }
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }

@@ -1,7 +1,31 @@
 .item-list {
-  width: 85vw;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  // grid-gap: .5rem;
+  grid-template-columns:  1fr 1fr 1fr;
+  column-gap: 40px;
+  place-self: center;
+  @media (max-width: 1200px) {
+    place-self: center;
+    margin: 0 20px;
+    column-gap: 30px;
+  }
+  @media (max-width: 992px) {
+    place-self: center;
+    column-gap: 90px;
+    grid-template-columns:  1fr 1fr;
+  }
+  @media (max-width: 768px) {
+    place-self: center;
+    column-gap: 50px;
+    grid-template-columns:  1fr 1fr;
+  }
+  @media (max-width: 600px) {
+    place-self: center;
+    grid-template-columns:  1fr;
+  }
+  @media (max-width: 480px) {
+    place-self: center;
+    grid-template-columns:  1fr;
+  }
+
 }

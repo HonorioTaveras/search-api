@@ -2,6 +2,8 @@ import React from 'react';
 
 import './SearchBar.scss';
 
+import MagnifyingGlass from '../../assets/loupe.png';
+
 const SearchBar = ({ handleSearchSubmit, placeholder, handleSearchChange }) => (
   <div className='search-container'>
     <form onSubmit={handleSearchSubmit}>
@@ -11,7 +13,9 @@ const SearchBar = ({ handleSearchSubmit, placeholder, handleSearchChange }) => (
         placeholder={placeholder}
         onChange={handleSearchChange}
       />
-      <input className='magnifying-glass' type='submit' />
+      <button className='magnifying-glass' type='submit'>
+        <img src={MagnifyingGlass} alt='' />
+      </button>
     </form>
   </div>
 );
