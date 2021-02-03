@@ -21,7 +21,7 @@ const PaginateResults = ({
         }
       }
       if (totalPages <= 5) {
-        for (let i = currentPage - 2; i <= totalPages; i += 1) {
+        for (let i = 1; i <= totalPages; i += 1) {
           pages.push(
             <Pagination.Item key={i} onClick={() => paginate(i)}>
               {i}
